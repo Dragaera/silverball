@@ -18,3 +18,11 @@ glance - what to expact from upgrading to a new version.
 
 ### Removed
 
+
+## [0.1.0] - 2017-01-03
+
+### Added
+
+- Function to convert timespan in seconds to human-readable words.
+- Function to convert integer to string with thousands-separator
+- Function to convert fraction to rounded percentage
