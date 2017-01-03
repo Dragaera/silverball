@@ -12,6 +12,8 @@ glance - what to expact from upgrading to a new version.
 
 ### Fixed
 
+- Missing rounding within `::timespan_in_words.`
+
 ### Security
 
 ### Deprecated

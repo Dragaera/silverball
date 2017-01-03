@@ -32,7 +32,7 @@ module Silverball
           if hours == hours.to_i
             hours = hours.to_i
           else
-            hours - hours.round(round)
+            hours = hours.round(round)
           end
         end
       else
@@ -47,7 +47,7 @@ module Silverball
           if minutes == minutes.to_i
             minutes = minutes.to_i
           else
-            minutes - minutes.round(round)
+            minutes = minutes.round(round)
           end
         end
       else
@@ -58,7 +58,7 @@ module Silverball
         if seconds == seconds.to_i
           seconds = seconds.to_i
         else
-          seconds = seconds.round(rouond)
+          seconds = seconds.round(round)
         end
       end
 
