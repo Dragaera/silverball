@@ -57,6 +57,12 @@ module Silverball
         it 'should support days only' do
           expect(subject.timespan_in_words(7 * 24 * 60 * 60 + 12 * 60 * 60, unit: :days)).to eq '7.5d'
         end
+
+        it 'should not include other remaining types' do
+          # Seconds will be a tiny fraction of a second due to floating point
+          # inaccuracies.
+          expect(subject.timespan_in_words(251755, unit: :hours)).to eq '69.93h'
+        end
       end
     end
 
