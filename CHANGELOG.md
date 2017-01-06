@@ -12,14 +12,19 @@ glance - what to expact from upgrading to a new version.
 
 ### Fixed
 
-- Removes seconds part of output of `timespan_in_words` in single-unit mode due
-  to floating point inaccuracies.
-
 ### Security
 
 ### Deprecated
 
 ### Removed
+
+
+## [0.1.2] - 2017-01-06
+
+### Fixed
+
+- Removes seconds part of output of `timespan_in_words` in single-unit mode due
+  to floating point inaccuracies.
 
 
 ## [0.1.1] - 2017-01-03
