@@ -62,13 +62,21 @@ module Silverball
         end
       end
 
-      out = []
-      out << "#{ days }d" if days > 0
-      out << "#{ hours }h" if hours > 0
-      out << "#{ minutes }m" if minutes > 0
-      out << "#{ seconds }s" if seconds > 0 || (seconds == 0 && minutes == 0 && hours == 0 && days == 0)
+      if unit == :days
+        "#{ days }d"
+      elsif unit == :hours
+        "#{ hours }h"
+      elsif unit == :minutes
+        "#{ minutes }m"
+      else
+        out = []
+        out << "#{ days }d" if days > 0
+        out << "#{ hours }h" if hours > 0
+        out << "#{ minutes }m" if minutes > 0
+        out << "#{ seconds }s" if seconds > 0 || (seconds == 0 && minutes == 0 && hours == 0 && days == 0)
 
-      out.join(' ')
+        out.join(' ')
+      end
     end
   end
 end
