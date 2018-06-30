@@ -12,6 +12,10 @@ glance - what to expact from upgrading to a new version.
 
 ### Fixed
 
+- Prevent `timespan_in_words`, when limited to one output unit, from returning
+  sub-unit timespans as '0'. This fixes eg `timespan_in_words(30, unit:
+  :minutes)` from returning '0m' instead of '0.5 min'.
+
 ### Security
 
 ### Deprecated

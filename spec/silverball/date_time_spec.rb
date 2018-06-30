@@ -58,6 +58,13 @@ module Silverball
           expect(subject.timespan_in_words(7 * 24 * 60 * 60 + 12 * 60 * 60, unit: :days)).to eq '7.5d'
         end
 
+        it 'should support sub-unit timespans' do
+          expect(subject.timespan_in_words(0.5,          unit: :seconds, round: 1)).to eq '0.5s'
+          expect(subject.timespan_in_words(30,           unit: :minutes, round: 1)).to eq '0.5m'
+          expect(subject.timespan_in_words(30 * 60,      unit: :hours,   round: 1)).to eq '0.5h'
+          expect(subject.timespan_in_words(12 * 60 * 60, unit: :days,    round: 1)).to eq '0.5d'
+        end
+
         it 'should not include other remaining types' do
           # Seconds will be a tiny fraction of a second due to floating point
           # inaccuracies.

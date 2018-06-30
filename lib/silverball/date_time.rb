@@ -9,7 +9,7 @@ module Silverball
     def timespan_in_words(seconds, unit: nil, round: 2)
       seconds = seconds.to_f unless unit.nil?
 
-      if seconds >= SECONDS_PER_DAY && (unit.nil? || unit == :days)
+      if (seconds >= SECONDS_PER_DAY && unit.nil?) || unit == :days
         days = seconds / SECONDS_PER_DAY
         seconds -= days * SECONDS_PER_DAY
 
@@ -24,7 +24,7 @@ module Silverball
         days = 0
       end
 
-      if seconds >= SECONDS_PER_HOUR && (unit.nil? || unit == :hours)
+      if (seconds >= SECONDS_PER_HOUR && unit.nil?) || unit == :hours
         hours = seconds / SECONDS_PER_HOUR
         seconds -= hours * SECONDS_PER_HOUR
 
@@ -39,7 +39,7 @@ module Silverball
         hours = 0
       end
 
-      if seconds >= SECONDS_PER_MINUTE && (unit.nil? || unit == :minutes)
+      if (seconds >= SECONDS_PER_MINUTE && unit.nil?) || unit == :minutes
         minutes = seconds / SECONDS_PER_MINUTE
         seconds -= minutes * SECONDS_PER_MINUTE
 
